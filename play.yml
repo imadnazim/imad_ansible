@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: 10.239.5.77
   become: yes
   gather_facts: false
   tasks:
