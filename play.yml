@@ -3,12 +3,12 @@
   become: yes
   gather_facts: false
   tasks:
-   - imad.coll.module2:
-      ipath: "/home/imadnazim/id_deletion/Updated Master Sheet for IDs sent for disablement -22-02-2022.xlsx"
-      opath: "/home/imadnazim/id_deletion/mapping.yml"
-     register: m1_out
+  # -
+   - name: Get uptime information
+     ansible.builtin.shell: /usr/bin/uptime
+     register: result
 
-   - name: Show dictionary values
-     debug:
-        msg:
-         - "{{m1_out}}"
+   - name: Print return information from the previous task
+     ansible.builtin.debug:
+       var: result
+       #verbosity: 2
