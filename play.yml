@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: false
+  tasks:
+   - imad.coll.module2:
+      ipath: "/home/imadnazim/id_deletion/Updated Master Sheet for IDs sent for disablement -22-02-2022.xlsx"
+      opath: "/home/imadnazim/id_deletion/mapping.yml"
+     register: m1_out
+
+   - name: Show dictionary values
+     debug:
+        msg:
+         - "{{m1_out}}"
